@@ -25,6 +25,15 @@ const handleUserInput = function (data) {
   if (data === '\u0064') {
     connection.write("Move: right");
   }
+  if (data === '\u0069') {
+    connection.write("Say: snek zoom");
+  }
+  if (data === '\u006f') {
+    connection.write("Say: I am #1");
+  }
+  if (data === '\u0070') {
+    connection.write("Say: Gotta go fast");
+  }
 
   if (data === '\u0003') {
     process.exit();
