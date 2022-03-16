@@ -1,4 +1,5 @@
 const { stdin } = require("process");
+const { moveUpKey, moveDownKey, moveLeftKey, moveRightKey } = require("./constants")
 let connection;
 
 const setupInput = (conn) => {
@@ -13,16 +14,16 @@ const setupInput = (conn) => {
 
 const handleUserInput = function (data) {
   // process.stdout.write("test ");
-  if (data === '\u0077') {
+  if (data === moveUpKey) {
     connection.write("Move: up");
   }
-  if (data === '\u0073') {
+  if (data === moveDownKey) {
     connection.write("Move: down");
   }
-  if (data === '\u0061') {
+  if (data === moveLeftKey) {
     connection.write("Move: left");
   }
-  if (data === '\u0064') {
+  if (data === moveRightKey) {
     connection.write("Move: right");
   }
   if (data === '\u0069') {
