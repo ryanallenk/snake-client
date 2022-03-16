@@ -1,8 +1,3 @@
-const { connect, } = require("./client");
-const { input } = require("./input");
-const net = require("net");
-const { stdin } = require("process");
-
 const setupInput = function () {
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -19,8 +14,6 @@ const handleUserInput = function (data) {
   }
 };
 
-
-
-console.log("Connecting ...");
-connect();
-setupInput();
+module.exports = { 
+  setupInput,
+ };
