@@ -1,26 +1,8 @@
 const { connect, } = require("./client");
-const { input } = require("./input");
+const { setupInput } = require("./input");
 const net = require("net");
-const { stdin } = require("process");
-
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  stdin.on("data", handleUserInput);
-  return stdin;
-}
-
-const handleUserInput = function (data) {
-  // process.stdout.write("test ");
-  if (data === '\u0003') {
-    process.exit();
-  }
-};
-
 
 
 console.log("Connecting ...");
-connect();
-setupInput();
+const connectObj = connect();
+setupInput(connectObj);
